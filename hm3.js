@@ -12,11 +12,11 @@ function makeTree(nodes, parentId = null) {
 //2
 
 
-function MakeTree2(nodes, parentId = null) {
+function makeTree2(nodes, parentId = null) {
     const tree = { id: parentId, children: [] }
     const children = nodes.filter(node => node.parentId === parentId)
     children.forEach(child => {
-        tree.children.push(MakeTree2(nodes, child.id))
+        tree.children.push(makeTree2(nodes, child.id))
     })
     return tree
 }
