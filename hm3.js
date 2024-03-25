@@ -21,7 +21,18 @@ function makeTree2(nodes, parentId = null) {
     return tree
 }
 
+////////
 
+function  findNode( tree, id){
+ 	for(let key in tree){
+        if(+key === id){
+            return tree[key]
+        }else{
+      return findNode(tree[key], id)
+            }
+    }
+return null
+}  
 
 //3
 
