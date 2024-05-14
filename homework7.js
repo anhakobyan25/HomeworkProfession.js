@@ -47,7 +47,7 @@ class Book {
         if (author instanceof Author) {
             this._author = author
         } else {
-            throw new Error("invalid author object")
+            throw new Error("Invalid author object")
         }
     }
     toString() {
