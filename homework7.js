@@ -1,10 +1,10 @@
 //1
 class Book {
     constructor(title, price, quantity) {
-        this._title = title
-        this._author = null
-        this._price = price
-        this._quantity = quantity
+        this.title = title
+        this.author = null
+        this.price = price
+        this.quantity = quantity
     }
     get title() {
         return this._title
@@ -42,8 +42,11 @@ class Book {
     getProfit() {
         return (this._price * this._quantity);
     }
-
-    setAuthor(author) {
+    get autor(){
+        return this._author
+    }
+    
+    set author(author) {
         if (author instanceof Author) {
             this._author = author
         } else {
@@ -58,9 +61,9 @@ class Book {
 
 class Author {
     constructor(name, email, gender) {
-        this._name = name
-        this._email = email
-        this._gender = gender
+        this.name = name
+        this.email = email
+        this.gender = gender
 
     }
     get name() {
@@ -105,7 +108,7 @@ class Author {
 
 class Account {
     constructor(name, balance) {
-        this._id = "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
+        this.id = "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
             (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
         );
         this._name = name
@@ -179,10 +182,10 @@ class Account {
 //3
 class Person{
     constructor(firstName, lastName, gender, age){
-          this._firstName = firstName
-          this._lastName = lastName
-          this._gender = gender
-          this._age = age
+          this.firstName = firstName
+          this.lastName = lastName
+          this.gender = gender
+          this.age = age
       }
       get firstName(){
           return this._firstName
@@ -220,10 +223,10 @@ class Person{
   class Student extends Person{
         constructor(firstName, lastName, gender, age, program, year, fee) {
           super(firstName, lastName, gender, age)
-          this._program = program
-          this._year = year
-          this._fee = fee
-                  this._exams = {}
+          this.program = program
+          this.year = year
+          this.fee = fee
+                  this.exams = {}
       }
   
       get program() {
@@ -268,8 +271,8 @@ class Person{
   class Staff extends Person{
       constructor(firstName, lastName, gender, age, position, salary) {
           super(firstName, lastName, gender, age);
-          this._position = position;
-          this._salary = salary;
+          this.position = position;
+          this.salary = salary;
       }
   
       get position() {
